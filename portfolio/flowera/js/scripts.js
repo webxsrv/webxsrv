@@ -10,28 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  requestForm.addEventListener('submit', async (event) => {
+  requestForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const formData = new FormData(requestForm);
-
-    try {
-      const response = await fetch(requestForm.action, {
-        method: 'POST',
-        body: formData
-      });
-
-      if (!response.ok) {
-        return;
-      }
-
-      requestForm.classList.add('is-hidden');
-      requestSuccess.classList.add('is-active');
-      requestSuccess.setAttribute('aria-hidden', 'false');
-      requestForm.reset();
-    } catch (error) {
-      return;
-    }
+    requestForm.classList.add('is-hidden');
+    requestSuccess.classList.add('is-active');
+    requestSuccess.setAttribute('aria-hidden', 'false');
+    requestForm.reset();
   });
 });
 
