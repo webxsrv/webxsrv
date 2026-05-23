@@ -1,26 +1,22 @@
 /* =========================================================
    START: MOBILE ADAPTATION — 4 COL GRID / 16 MARGIN / 16 GUTTER
 ========================================================= */
-
 @media (max-width: 767px) {
   :root {
     --mobile-margin: 16px;
     --mobile-gutter: 16px;
     --mobile-grid: repeat(4, minmax(0, 1fr));
   }
-
   body {
     width: 100%;
     min-width: 0;
     overflow-x: hidden;
     background: #FAF9F5;
   }
-
   img {
     max-width: 100%;
     height: auto;
   }
-
   .site-header,
   .hero,
   .about,
@@ -34,236 +30,169 @@
     margin-left: 0;
     margin-right: 0;
   }
-
   /* =========================================================
      START: MOBILE HEADER
   ========================================================= */
-
   .site-header {
     position: relative;
     z-index: 50;
-
     height: 60px;
     padding: 0 var(--mobile-margin);
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
     align-items: center;
-
     background: #FAF9F5;
   }
-
   .site-header__logo {
     grid-column: 2 / 4;
     justify-self: center;
-
     width: 104px;
     height: 43px;
-
     transform: none;
-
     font-size: 34px;
     line-height: 42px;
     text-align: center;
   }
-
   .site-header__order-button {
     display: none;
   }
-
   .site-header__nav {
     position: absolute;
     right: var(--mobile-margin);
     top: 9px;
-
     width: 31px;
     height: 31px;
-
     margin: 0;
-
     display: block;
-
     background: #730001;
     border-radius: 6px;
-
     overflow: hidden;
     z-index: 60;
-
     cursor: pointer;
   }
-
   .site-header__nav.is-open {
     width: 70px;
     height: 85px;
   }
-
   .site-header__menu-icon {
     position: absolute;
     display: block;
     pointer-events: none;
     z-index: 3;
   }
-
   .site-header__menu-icon--open {
     left: 5px;
     top: 6px;
-
     width: 20px;
     height: 18px;
   }
-
   .site-header__menu-icon--close {
     right: 8px;
     top: 8px;
-
     width: 15px;
     height: 15px;
-
     display: none;
   }
-
   .site-header__nav.is-open .site-header__menu-icon--open {
     display: none;
   }
-
   .site-header__nav.is-open .site-header__menu-icon--close {
     display: block;
   }
-
   .site-header__menu {
     display: none;
-
     position: absolute;
     left: 0;
     top: 27px;
-
     width: 70px;
     height: 51px;
-
     padding: 0;
     margin: 0;
-
     flex-direction: column;
     gap: 0;
-
     transform: none;
     background: transparent;
   }
-
   .site-header__nav.is-open .site-header__menu {
     display: flex;
   }
-
   .site-header__menu-item {
     width: 70px;
   }
-
   .site-header__menu-link {
     width: 70px;
     min-width: 70px;
     height: 17px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 0;
-
     font-size: 11px;
     line-height: 16px;
     font-weight: 400;
-
     color: #F8F8F8;
     background: transparent;
   }
-
   .site-header__menu-link:hover {
     background: #3A0000;
   }
-
   /* =========================================================
      END: MOBILE HEADER
   ========================================================= */
-
-
-
   /* =========================================================
      START: MOBILE HERO
   ========================================================= */
-
   .hero {
     position: relative;
-
     min-height: 520px;
     height: auto;
-
     padding: 0 var(--mobile-margin);
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
-
     transform: none;
     overflow: visible;
     background: #FAF9F5;
   }
-
   .hero__visual {
     position: relative;
-
     grid-column: 1 / -1;
     grid-row: 1;
-
     left: auto;
     top: auto;
-
     width: 100%;
     height: 267px;
-
     pointer-events: none;
   }
-
   .hero__visual-bg {
     position: absolute;
     left: 0;
     top: 0;
     right: auto;
-
     width: 100%;
     height: 267px;
-
     transform: none;
-
     background: #E5DAD5;
     border-radius: 17px;
-
     pointer-events: none;
   }
-
   .hero__image {
     position: absolute;
     left: 0;
     top: 0;
-
     width: 100%;
     height: 267px;
-
     object-fit: cover;
-
     pointer-events: none;
   }
-
   .hero__bg-text {
     position: absolute;
     left: var(--mobile-margin);
     top: 88px;
-
     width: calc(100% - 32px);
     height: 106px;
-
     transform: none;
-
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 400;
@@ -272,661 +201,459 @@
     text-align: center;
     text-transform: uppercase;
     color: #F2F1EE;
-
     pointer-events: none;
     user-select: none;
   }
-
   .hero__title {
     position: absolute;
     left: var(--mobile-margin);
     top: 12px;
-
     width: 267px;
     height: 80px;
-
     font-size: 30px;
     line-height: 40px;
-
     z-index: 3;
   }
-
   .hero__buttons {
     position: relative;
-
     grid-column: 1 / -1;
     grid-row: 2;
-
     left: auto;
     top: auto;
-
     width: 209px;
     height: auto;
-
     margin: 17px auto 0;
-
     display: flex;
     flex-direction: column;
     gap: 21px;
-
     transform: none;
-
     z-index: 5;
   }
-
   .hero__delivery-badge,
   .hero__order-button {
     position: relative;
-
     left: auto;
     top: auto;
-
     width: 209px;
     height: 58px;
-
     border-radius: 10px;
-
     font-size: 16px;
     line-height: 18px;
   }
-
   .hero__order-button {
     gap: 8px;
   }
-
   .hero__order-icon {
     width: 18px;
     height: 18px;
   }
-
   /* =========================================================
      END: MOBILE HERO
   ========================================================= */
-
-
-
   /* =========================================================
      START: MOBILE ABOUT
   ========================================================= */
-
   .about {
     position: relative;
-
     height: auto;
-
     margin-top: 35px;
     padding: 28px var(--mobile-margin) 35px;
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
-
     transform: none;
-
     background: #F1E5E1;
   }
-
   .about__title {
     position: relative;
-
     grid-column: 1 / -1;
     justify-self: center;
-
     left: auto;
     top: auto;
-
     width: 212px;
     height: auto;
-
     transform: none;
-
     font-size: 30px;
     line-height: 27px;
     text-align: center;
   }
-
   .about__grid {
     position: relative;
-
     grid-column: 1 / -1;
-
     left: auto;
     top: auto;
-
     width: 100%;
-
     margin-top: 35px;
-
     transform: none;
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
     row-gap: 35px;
   }
-
   .about-card,
   .about-right-column {
     grid-column: 2 / 4;
     justify-self: center;
   }
-
   .about-right-column {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .about-card {
     width: 190px;
     height: 270px;
-
     border-radius: 12px;
   }
-
   .about-card--first,
   .about-card--second,
   .about-card--third {
     height: 270px;
   }
-
   .about-card__image {
     width: 190px;
     height: 157px;
-
     border-radius: 12px 12px 0 0;
   }
-
   .about-card__content {
     padding: 12px 14px 0;
   }
-
   .about-card__icon {
     left: 14px;
     top: -31px;
-
     width: 34px;
     height: 35px;
-
     border-radius: 8px;
   }
-
   .about-card__icon-image {
     width: 18px;
     height: 18px;
   }
-
   .about-card__text {
     width: 160px;
-
     font-size: 12px;
     line-height: 16px;
     text-align: center;
   }
-
   .about__more-button {
     width: 190px;
     height: 24px;
-
     margin-top: 10px;
-
     transform: none;
-
     border-radius: 6px;
-
     font-size: 12px;
     line-height: 16px;
   }
-
   /* =========================================================
      END: MOBILE ABOUT
   ========================================================= */
-
-
-
   /* =========================================================
      START: MOBILE PRODUCTS
   ========================================================= */
-
   .products {
     position: relative;
-
     height: auto;
-
-    margin-top: 35px;
+    margin-top: 100px;
     padding: 0 var(--mobile-margin) 35px;
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
-
     transform: none;
-
     background: #FAF9F5;
   }
-
-  .products__title {
-    position: relative;
-
-    grid-column: 1 / -1;
-    justify-self: center;
-
+.products__title {
+    position: absolute;
+    display: block;
     left: auto;
-    top: auto;
-
-    width: 254px;
-    height: auto;
-
-    transform: none;
-
+    top: 7px;
+    width: 100%;
+    transform: translateY(-12px);
     font-size: 30px;
-    line-height: 27px;
+    line-height: 34px;
     text-align: center;
-  }
-
+}
   .products__grid {
     position: relative;
-
     grid-column: 1 / -1;
-
     left: auto;
     top: auto;
-
     width: 100%;
-
     margin-top: 35px;
-
     transform: none;
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
     row-gap: 49px;
   }
-
   .product-card,
   .products-note {
     grid-column: 1 / -1;
     justify-self: center;
-
     width: 100%;
     max-width: 343px;
   }
-
   .product-card {
     height: 516px;
-
     border-radius: 40px;
   }
-
   .product-card__image {
     width: 100%;
     height: 345px;
-
     object-fit: cover;
-
     border-radius: 40px 40px 0 0;
   }
-
   .product-card__body {
     position: relative;
-
     height: 171px;
   }
-
   .product-card__title {
     position: absolute;
     left: 0;
     top: 54px;
-
     width: 100%;
     height: 40px;
     min-width: 0;
-
     font-size: 24px;
     line-height: 40px;
     text-align: center;
   }
-
   .product-card__more {
     position: absolute;
     left: 50%;
     top: 105px;
-
     width: 121px;
     height: 27px;
-
     transform: translateX(-50%);
-
     font-size: 18px;
     line-height: 27px;
   }
-
   .products-note {
     position: relative;
-
     height: 410px;
-
     border-radius: 39px;
   }
-
   .products-note__icon {
     position: absolute;
     left: 32px;
     top: 35px;
-
     width: 54px;
     height: 53px;
   }
-
   .products-note__text {
     position: absolute;
     left: 32px;
     top: 112px;
-
     width: calc(100% - 64px);
-
     margin: 0;
-
     font-size: 16px;
     line-height: 24px;
   }
-
   .products-tooltip {
     position: fixed;
     left: 50%;
     top: 120px;
-
     width: min(339px, calc(100% - 32px));
     height: 194px;
-
     transform: translateX(-50%);
-
     background-size: 100% 194px;
-
     z-index: 100;
   }
-
   .products-tooltip__text {
     left: 34px;
     top: 34px;
-
     width: calc(100% - 68px);
     height: 110px;
-
     font-size: 12px;
     line-height: 18px;
   }
-
   .products-tooltip__order {
     left: 34px;
     bottom: 22px;
-
     width: 84px;
     height: 22px;
-
     font-size: 18px;
     line-height: 22px;
   }
-
   .products-tooltip__close {
     right: 24px;
     top: 23px;
   }
-
   /* =========================================================
      END: MOBILE PRODUCTS
   ========================================================= */
-
-
-
   /* =========================================================
      START: MOBILE REQUEST
   ========================================================= */
-
   .request {
     position: relative;
-
     height: auto;
-
     margin-top: 35px;
     padding: 24px var(--mobile-margin) 23px;
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
-
     background: #F5E6E1;
   }
-
   .request__content {
     position: relative;
-
     grid-column: 1 / -1;
     justify-self: center;
-
     left: auto;
     top: auto;
-
     width: 295px;
-
     transform: none;
   }
-
-  .request__title {
-    width: 228px;
+.request__title {
+    position: relative;
+    top: 6px;
+    width: 255px;
     height: auto;
-
     margin: 0 auto;
-
+    transform: translateY(-11px);
     font-size: 30px;
     line-height: 27px;
     text-align: center;
     color: #000000;
-  }
-
+}
   .request__text {
     width: 295px;
     height: auto;
-
-    margin-top: 0;
-
+    margin-top: 20px;
     transform: none;
-
     font-size: 16px;
     line-height: 18px;
     font-style: normal;
     font-weight: 400;
     text-align: center;
     color: #000000;
-  }
-
+}
   .request__form-wrapper {
     position: relative;
-
     grid-column: 1 / -1;
-
     left: auto;
     top: auto;
-
     width: 100%;
     height: 284px;
-
     margin-top: 24px;
-
     transform: none;
   }
-
   .request-form,
   .request-success {
     width: 100%;
     height: 284px;
-
     background: #FAF9F5;
     border-radius: 12px;
   }
-
   .request-form__input {
     position: absolute;
     left: 24px;
-
     width: calc(100% - 48px);
     height: 48px;
-
     padding: 0 30px;
-
     border-radius: 16.5px;
-
     font-size: 18px;
     line-height: 27px;
   }
-
   .request-form__input:first-of-type {
     top: 36px;
   }
-
   .request-form__input:nth-of-type(2) {
     top: 98px;
   }
-
   .request-form__button {
     position: absolute;
     left: 17px;
     top: 163px;
-
     width: calc(100% - 34px);
     height: 67px;
-
     border-radius: 55px;
-
     font-size: 18px;
     line-height: 27px;
   }
-
   .request-form__policy {
     display: none;
   }
-
   .request-success__title {
     left: 50%;
     top: 26px;
-
     width: 299px;
     height: 52px;
-
     transform: translateX(-50%);
-
     font-size: 24px;
     line-height: 26px;
   }
-
   .request-success__icon {
     left: 50%;
     top: 91px;
-
     width: 107px;
     height: 108px;
-
     transform: translateX(-50%);
   }
-
   .request-success__text {
     left: 50%;
     top: 214px;
-
     width: 242px;
     height: 52px;
-
     transform: translateX(-50%);
-
     font-size: 22px;
     line-height: 26px;
   }
-
   /* =========================================================
      END: MOBILE REQUEST
   ========================================================= */
-
-
-
   /* =========================================================
      START: MOBILE REVIEWS
   ========================================================= */
-
-  .reviews {
+.reviews {
     position: relative;
-
     height: auto;
-
+    top: 0;
     margin-top: 35px;
+    transform: translateY(-558px);
     padding: 0 var(--mobile-margin) 35px;
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
-
     background: #FAF9F5;
-  }
-
-  .reviews__title {
+}
+.reviews__title {
     position: relative;
-
     grid-column: 1 / -1;
-
     left: auto;
-    top: auto;
-
+    top: 26px;
     width: 100%;
     height: auto;
-
-    transform: none;
-
+    transform: translateY(-48px);
     font-size: 30px;
     line-height: 36px;
-  }
-
+}
   .reviews__slider {
     position: relative;
-
     grid-column: 1 / -1;
-
     left: auto;
     top: auto;
-
     width: 100%;
-
     margin-top: 35px;
-
     transform: none;
-
     display: block;
   }
-
   .reviews__arrow {
     display: none;
   }
-
   .reviews__card {
     width: 100%;
     min-height: 176px;
-
     padding: 24px 18px;
-
     border-radius: 15px;
     background: #F7E9E6;
-
     touch-action: pan-y;
   }
-
   .reviews__text {
     position: relative;
-
     left: auto;
     top: auto;
-
     width: 100%;
     height: auto;
-
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -934,232 +661,166 @@
     line-height: 38px;
     color: #000000;
   }
-
   .reviews__author {
     position: relative;
-
     left: auto;
     top: auto;
-
     width: 100%;
     height: auto;
-
     margin-top: 12px;
-
     font-size: 18px;
     line-height: 38px;
   }
-
   /* =========================================================
      END: MOBILE REVIEWS
   ========================================================= */
-
-
-
   /* =========================================================
      START: MOBILE CONTACTS
   ========================================================= */
-
-  .contacts {
+.contacts {
     position: relative;
-
     height: auto;
-
+    top: 0;
     margin-top: 35px;
+    transform: translateY(-542px);
     padding: 29px var(--mobile-margin) 35px;
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
-
     background: #F1E5E1;
-  }
-
+}
   .contacts__title {
     position: relative;
-
     grid-column: 1 / -1;
     justify-self: center;
-
     left: auto;
     top: auto;
-
     width: 259px;
     height: auto;
-
     transform: none;
-
     font-size: 30px;
     line-height: 38px;
     text-align: center;
     color: #000000;
   }
-
   .contacts__wrapper {
     position: relative;
-
     grid-column: 1 / -1;
-
     left: auto;
     top: auto;
-
     width: 100%;
-
     margin-top: 35px;
-
     transform: none;
-
     display: block;
   }
-
   .contacts-card {
     position: relative;
-
     width: 100%;
     height: 294px;
-
     transform: none;
-
     border-radius: 20px;
   }
-
   .contacts-image {
     display: none;
   }
-
   .contacts-card__schedule {
     position: absolute;
     left: 72px;
     top: 35px;
   }
-
   .contacts-card__time {
     width: 258px;
     height: 76px;
-
     font-size: 18px;
     line-height: 38px;
   }
-
   .contacts-card__label {
     width: 119px;
     height: 38px;
-
     transform: translateY(-36px);
-
     font-size: 16px;
     line-height: 38px;
   }
-
   .contacts-card__address-block {
     position: absolute;
     left: 72px;
     top: 105px;
   }
-
   .contacts-card__address {
     width: 222px;
     height: 76px;
-
     font-size: 18px;
     line-height: 38px;
   }
-
   .contacts-card__map-link {
     width: 164px;
     height: 38px;
-
     transform: translate(0, -36px);
-
     font-size: 16px;
     line-height: 38px;
   }
-
   .contacts-card__socials {
     position: absolute;
     left: 50%;
     top: 214px;
-
     width: 245px;
     height: 38px;
-
     transform: translateX(-50%);
-
     justify-content: center;
     gap: 10px;
   }
-
   .contacts-card__social-link,
   .contacts-card__divider {
     font-size: 22px;
     line-height: 38px;
     font-weight: 700;
   }
-
   /* =========================================================
      END: MOBILE CONTACTS
   ========================================================= */
-
-
-
   /* =========================================================
      START: MOBILE FOOTER
   ========================================================= */
-
-  .footer {
+.footer {
     position: relative;
-
+    margin-top: 0;
     height: 76px;
-
+    transform: translateY(-540px);
     padding: 0 var(--mobile-margin);
-
     display: grid;
     grid-template-columns: var(--mobile-grid);
     column-gap: var(--mobile-gutter);
-  }
-
+}
   .footer__content {
     position: relative;
-
     grid-column: 2 / 4;
     justify-self: center;
-
     left: auto;
     top: auto;
-
     width: 179px;
     height: 76px;
-
     transform: none;
   }
-
   .footer__copyright {
     width: 108px;
     height: 76px;
-
     margin-top: 0;
-
     font-size: 10px;
     line-height: 38px;
   }
-
   .footer__logo-link {
     margin-left: 10px;
     margin-top: 10px;
   }
-
   .footer__logo {
     width: 61px;
     height: 20px;
-
     margin-left: 0;
   }
-
   /* =========================================================
      END: MOBILE FOOTER
   ========================================================= */
 }
-
 /* =========================================================
    END: MOBILE ADAPTATION — 4 COL GRID / 16 MARGIN / 16 GUTTER
 ========================================================= */
