@@ -489,12 +489,12 @@
 }
 
 .products__title {
-    position: relative;
-    left: 80%;
-    top: 6px;
-    width: 871px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 909px;
     height: 80px;
-    transform: translateX(-50%);
+    transform: translate(-13%, -24px);
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 700;
