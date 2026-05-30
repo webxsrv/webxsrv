@@ -1,0 +1,957 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+:root {
+  --color-page: #f4f2f1;
+  --color-cream: #ebe7e4;
+  --color-dark: #101823;
+  --color-ink: #191a1b;
+  --color-muted: #81807e;
+  --color-gold: #cdbba2;
+  --color-red: #681528;
+  --color-contact: #25101b;
+  --container: 1440px;
+  --gutter: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--color-gold);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.eyebrow span,
+.section-line {
+  display: inline-block;
+  width: 54px;
+  height: 4px;
+  background: var(--color-gold);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  border-radius: 34px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.button:hover,
+.round-link:hover,
+.team-button:hover,
+.header-button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  min-width: 388px;
+  padding: 0 40px;
+  background: var(--color-red);
+  border: 1px solid #8e2439;
+  color: #fdfcfc;
+}
+
+.button-ghost {
+  min-width: 270px;
+  gap: 19px;
+  border: 1px solid rgba(255, 255, 255, .38);
+  color: #fdfcfc;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.button-ghost:hover {
+  background: #66747B;
+  border-color: #66747B;
+}
+
+.button-ghost span,
+.contact-button span,
+.team-button span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+.round-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #d3d0cc;
+  border-radius: 50%;
+  color: #3c3839;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+/* =========================================================
+   START : HERO SECTION
+========================================================= */
+
+.hero {
+  min-height: 1085px;
+  background:
+    linear-gradient(90deg, rgba(9, 11, 16, .88) 0%, rgba(9, 11, 16, .74) 38%, rgba(9, 11, 16, .1) 68%),
+    url("../img/hero.webp") center top / cover no-repeat;
+  color: #fdfcfc;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: 190px 1fr auto;
+  align-items: center;
+  min-height: 110px;
+}
+
+.logo,
+.footer-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.site-nav {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 92px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  transition: color .2s ease;
+}
+
+.site-nav a:hover {
+  color: #aaa8a8;
+}
+
+.header-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 256px;
+  height: 74px;
+  border: 1px solid rgba(255, 255, 255, .48);
+  border-radius: 40px;
+  color: #dad8d5;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.header-button:hover {
+  background: #596166;
+  border-color: #596166;
+}
+
+.header-button::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -40%;
+  width: 7%;
+  height: 320%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(25deg);
+  pointer-events: none;
+
+  /* speed animation */
+  animation: headerButtonShine 3.2s linear infinite;
+}
+
+@keyframes headerButtonShine {
+  0% {
+    left: -45%;
+  }
+
+  100% {
+    left: 145%;
+  }
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.hero-content {
+  width: 715px;
+  padding-top: 244px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 87px;
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: 0;
+}
+
+.hero-subtitle {
+  margin: 41px 0 49px 11px;
+  color: #e4e4e2;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero .section-line {
+  margin-left: 10px;
+}
+
+.hero-lead {
+  width: 600px;
+  margin: 60px 0 0 9px;
+  color: #fdfcfc;
+  font-size: 20px;
+  line-height: 1.56;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 26px;
+  margin-top: 65px;
+  margin-left: 6px;
+}
+
+/* =========================================================
+   END: HERO SECTION
+========================================================= */
+/* =========================================================
+   START : ADVANTAGES SECTION
+========================================================= */
+
+.advantages {
+  position: relative;
+  z-index: 2;
+  margin-top: -112px;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+}
+
+.advantage-card {
+  position: relative;
+  width: 465.42px;
+  min-height: 363px;
+  overflow: hidden;
+  padding: 45px 42px 38px;
+  background: #eeeae7;
+  border: 1px solid #c9c5c2;
+  border-radius: 18px;
+}
+
+.advantage-card h2 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 25px;
+  font-family: "Cormorant Garamond", "GFS Didot", Georgia, serif;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.06;
+}
+
+.advantage-card p {
+  position: relative;
+  z-index: 2;
+  width: 180px;
+  margin: 0;
+  color: #000;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.advantage-card > img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(3px, 1px);
+  max-width: 53%;
+}
+
+.advantage-card:nth-child(2) > img {
+  right: 58px;
+  bottom: 5px;
+  max-width: 42%;
+}
+
+.advantage-card .round-link {
+  position: absolute;
+  left: 43px;
+  bottom: 39px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advantage-card .round-link .arrow_icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================================================
+   END: ADVANTAGES SECTION
+========================================================= */
+
+/* =========================================================
+   START : ABOUT SECTION
+========================================================= */
+
+.about {
+  padding: 160px 0 112px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 779px 1fr;
+  gap: 114px;
+  align-items: center;
+}
+
+.about-image {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 604px;
+  object-fit: cover;
+}
+
+.about-content {
+  padding-top: 2px;
+}
+
+.about-content h2,
+.section-heading h2,
+.team-header h2,
+.contact-content h2 {
+  margin: 47px 0 0;
+  font-family: "Cormorant Garamond", "GFS Didot", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.about-content h2 {
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.about-content p {
+  width: 520px;
+  margin: 41px 0 0;
+  font-size: 16px;
+  line-height: 2.08;
+}
+
+.signature {
+  margin-top: 78px;
+  font-family: "Caveat", cursive;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.about-content strong {
+  display: block;
+  margin-top: 41px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.about-content small {
+  display: block;
+  margin-top: 13px;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* =========================================================
+   END: ABOUT SECTION
+========================================================= */
+
+/* =========================================================
+   START : SERVICES SECTION
+========================================================= */
+
+.services {
+  padding: 36px 0 112px;
+}
+
+.section-heading {
+  margin-left: 120px;
+}
+
+.section-heading h2,
+.team-header h2 {
+  font-size: 47px;
+  line-height: 1.05;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  margin-top: 48px;
+}
+
+.service-card {
+  position: relative;
+  min-height: 399px;
+  padding: 49px 43px 43px;
+  background: #ebe7e4;
+  border: 1px solid #dedad7;
+  border-radius: 16px;
+  color: var(--color-dark);
+}
+
+.service-card-dark {
+  background: #161e2a;
+  border-color: #161e2a;
+  color: #d1ced0;
+}
+
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.service-icon img {
+  display: block;
+}
+
+.service-icon-balance {
+  width: 43px;
+  height: 35px;
+}
+
+.service-icon-building {
+  width: 34px;
+  height: 31px;
+}
+
+.service-icon-lock {
+  width: 30px;
+  height: 35px;
+}
+
+.service-card h3 {
+  margin: 65px 0 0;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.service-card p {
+  width: 310px;
+  margin: 31px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.service-card .round-link {
+  position: absolute;
+  right: 42px;
+  bottom: 46px;
+  color: currentColor;
+}
+
+.service-card .round-link img {
+  display: block;
+  width: 15px;
+  height: 16px;
+}
+
+.service-card-dark .round-link {
+  color: #cfcac6;
+}
+
+/* =========================================================
+   END: SERVICES SECTION
+========================================================= */
+
+/* =========================================================
+   START : TEAM SECTION
+========================================================= */
+
+.team {
+  padding: 0 0 110px;
+}
+
+.team-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 3px;
+}
+
+.team-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 230px;
+  height: 72px;
+  margin-bottom: -4px;
+  border: 1px solid #c8c6c4;
+  border-radius: 38px;
+  color: #403e40;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform .2s ease;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  margin-top: 75px;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  min-height: 248px;
+  overflow: hidden;
+  background: #101823;
+  border-radius: 16px;
+  color: #fbfbfb;
+}
+
+.team-card img {
+  width: 100%;
+  height: 248px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.team-card div {
+  padding: 62px 33px 26px;
+}
+
+.team-card h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.team-card span {
+  display: block;
+  margin-top: 17px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.team-card p {
+  margin: 28px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.team-card a {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   END: TEAM SECTION
+========================================================= */
+
+/* =========================================================
+   START : CONTACTS SECTION
+========================================================= */
+
+.contacts {
+  overflow: hidden;
+  padding-top: 92px;
+  background: var(--color-contact);
+  border-radius: 28px 28px 0 0;
+  color: #f4f2f1;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 170px;
+  align-items: start;
+  padding-bottom: 86px;
+}
+
+.contact-content {
+  padding-left: 42px;
+}
+
+.contact-content h2 {
+  margin-top: 42px;
+  color: #fdfdfd;
+  font-size: 49px;
+  line-height: .98;
+}
+
+.contact-content p {
+  margin: 28px 0 0;
+  color: #ebeae6;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.contact-button {
+  justify-content: space-between;
+  width: 430px;
+  min-width: 0;
+  margin-top: 42px;
+  padding: 0 30px 0 41px;
+}
+
+.contact-content small {
+  display: block;
+  margin-top: 31px;
+  color: #f4f2f1;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.contact-map {
+  position: relative;
+  overflow: hidden;
+  width: 500px;
+  height: 320px;
+  margin-top: 13px;
+  border-radius: 24px;
+}
+
+.contact-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-marker {
+  position: absolute;
+  left: 148px;
+  top: 103px;
+  width: 25px;
+  height: 25px;
+  background: #681528;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.map-marker::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* =========================================================
+   END: CONTACTS SECTION
+========================================================= */
+
+/* =========================================================
+   START : FOOTER SECTION
+========================================================= */
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+.footer-layout {
+  display: grid;
+  grid-template-columns: 160px 1fr 120px auto;
+  align-items: center;
+  min-height: 90px;
+  padding: 0 42px;
+}
+
+.footer-logo {
+  color: #fffdf7;
+  font-size: 42px;
+}
+.footer-logo-mn {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 59px !important;
+    font-weight: 400;
+    line-height: 1;
+}
+.footer p,
+.footer a {
+  color: #f4f2f1;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.footer img {
+  width: 81px;
+  height: auto;
+}
+
+.footer nav {
+  display: flex;
+  gap: 64px;
+}
+
+/* =========================================================
+   END: FOOTER SECTION
+========================================================= */
+
+@media (max-width: 1200px) {
+  .site-header {
+    grid-template-columns: auto auto;
+  }
+
+  .nav-toggle {
+    justify-self: end;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  .site-nav,
+  .header-button {
+    display: none;
+  }
+
+.site-nav.is-open {
+    position: absolute;
+    width: 100%;
+    left: 24px;
+    right: 24px;
+    top: 96px;
+    z-index: 10;
+    display: grid;
+    gap: 0;
+    padding: 20px;
+    background: rgba(16, 24, 35, .96);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 16px;
+    text-align: center;
+}
+
+  .site-nav.is-open a {
+    padding: 14px;
+  }
+
+  .hero-content,
+  .hero-lead,
+  .about-content p {
+    width: min(100%, 650px);
+  }
+
+  .advantages-grid,
+  .services-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .section-heading {
+    margin-left: 0;
+  }
+
+  .team-card {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+
+  .hero {
+    min-height: 860px;
+    background-position: 58% top;
+  }
+
+  .hero-content {
+    padding-top: 125px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero-subtitle {
+    margin-left: 0;
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  .hero-lead {
+    margin-left: 0;
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .button-primary,
+  .button-ghost,
+  .contact-button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .advantages {
+    margin-top: -70px;
+  }
+
+  .advantage-card,
+  .service-card {
+    min-height: 330px;
+    padding: 34px 28px;
+  }
+
+  .about {
+    padding-top: 80px;
+  }
+
+  .about-image img {
+    height: 380px;
+  }
+
+  .about-content h2,
+  .section-heading h2,
+  .team-header h2,
+  .contact-content h2 {
+    font-size: 34px;
+  }
+
+  .team-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .team-card {
+    grid-template-columns: 42% 1fr;
+  }
+
+  .team-card div {
+    padding: 36px 22px 22px;
+  }
+
+  .contact-content {
+    padding-left: 0;
+  }
+
+  .contact-map {
+    width: 100%;
+    height: 260px;
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 28px 0;
+  }
+
+  .footer nav {
+    gap: 32px;
+  }
+}
