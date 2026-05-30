@@ -340,6 +340,115 @@
     aspect-ratio: 1 / 1;
   }
 }
+/* =========================================================
+   START : MOBILE OVERFLOW FIX
+========================================================= */
+
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 90px;
+    background:
+      linear-gradient(90deg, rgba(9, 11, 16, .88) 0%, rgba(9, 11, 16, .74) 55%, rgba(9, 11, 16, .35) 100%),
+      url("../img/hero.webp") 62% top / cover no-repeat;
+  }
+
+  .site-header {
+    grid-template-columns: auto 52px;
+    width: 100%;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 120px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: 52px;
+    line-height: .95;
+    overflow-wrap: normal;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    line-height: 1.35;
+    letter-spacing: 3px;
+  }
+
+  .hero-lead {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  .button-primary,
+  .button-ghost {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .advantages {
+    margin-top: 0;
+  }
+
+  .advantages-grid {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    grid-template-columns: 1fr;
+  }
+
+  .advantage-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: 360px;
+  }
+
+  .advantage-card p {
+    width: 58%;
+  }
+
+  .advantage-card > img {
+    max-width: 44%;
+    right: 0;
+    bottom: 0;
+    transform: none;
+  }
+
+  .advantage-card:nth-child(2) > img {
+    right: 10px;
+    bottom: 0;
+    max-width: 42%;
+  }
+}
+
+/* =========================================================
+   END : MOBILE OVERFLOW FIX
+========================================================= */
 
 /* =========================================================
    END: RESPONSIVE
